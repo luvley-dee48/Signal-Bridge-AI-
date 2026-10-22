@@ -1,0 +1,81 @@
+/* Live Monitoring dashboard styles. Edit colour values here, then run: npm run build:css:monitoring
+   Dark is the default (from the Stitch design). Light is applied with data-theme="light" on <html>.
+   The theme choice is shared with the Global Dashboard through localStorage key "sb-theme". */
+@tailwind base;
+@tailwind components;
+
+:root,:root[data-theme="dark"]{
+  --lm-surface-dark:25 19 33;
+  --lm-surface-dark-dim:19 14 26;
+  --lm-surface-dark-bright:38 29 50;
+  --lm-surface-container-dark:33 26 44;
+  --lm-surface-container-lowest:17 11 25;
+  --lm-surface-container:35 29 43;
+  --lm-surface-container-high:46 39 54;
+  --lm-surface-container-highest-dark:55 45 73;
+  --lm-outline:152 141 161;
+  --lm-outline-variant:76 67 85;
+  --lm-outline-dark:61 52 75;
+  --lm-on-surface:234 222 243;
+  --lm-on-surface-variant:207 194 215;
+  --lm-primary:218 184 255;
+  --lm-primary-container:121 0 217;
+  --lm-on-primary-container:235 221 255;
+  --lm-on-primary:71 0 131;
+  --lm-secondary:117 215 206;
+  --lm-secondary-container:0 131 124;
+  --lm-accent-teal-bright:78 218 208;
+  --lm-accent-lavender:214 186 255;
+  --lm-warning-dark:255 186 73;
+  --lm-error:255 180 171;
+  --lm-error-container:147 0 10;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --lm-surface-dark:251 247 255;
+  --lm-surface-dark-dim:241 234 248;
+  --lm-surface-dark-bright:250 245 255;
+  --lm-surface-container-dark:255 255 255;
+  --lm-surface-container-lowest:255 255 255;
+  --lm-surface-container:243 234 251;
+  --lm-surface-container-high:246 238 253;
+  --lm-surface-container-highest-dark:235 221 248;
+  --lm-outline:111 101 121;
+  --lm-outline-variant:214 198 232;
+  --lm-outline-dark:228 214 242;
+  --lm-on-surface:32 27 39;
+  --lm-on-surface-variant:79 70 89;
+  --lm-primary:92 0 169;
+  --lm-primary-container:121 0 217;
+  --lm-on-primary-container:255 255 255;
+  --lm-on-primary:255 255 255;
+  --lm-secondary:15 107 100;
+  --lm-secondary-container:0 131 124;
+  --lm-accent-teal-bright:11 127 119;
+  --lm-accent-lavender:92 0 169;
+  --lm-warning-dark:162 91 0;
+  --lm-error:179 38 46;
+  --lm-error-container:251 230 231;
+  color-scheme:light;
+}
+
+html,body{height:100%}
+body{background-color:rgb(var(--lm-surface-dark));color:rgb(var(--lm-on-surface));font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:14px;line-height:22px;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid rgb(var(--lm-primary));outline-offset:2px}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.5}
+dialog{color:rgb(var(--lm-on-surface))}
+dialog::backdrop{background:rgba(15,8,24,.6)}
+.msi{width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:middle;flex:none}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:rgb(var(--lm-primary-container));color:#fff;padding:8px 14px;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+.custom-scrollbar::-webkit-scrollbar{width:5px;height:5px}
+.custom-scrollbar::-webkit-scrollbar-track{background:transparent}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:rgba(152,141,161,.35);border-radius:4px}
+@keyframes pulse-halo{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.4);opacity:.25}}
+.pulse-halo-animation{animation:pulse-halo 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes sweep{0%{transform:translateY(0);opacity:.8}50%{transform:translateY(90px);opacity:.3}100%{transform:translateY(0);opacity:.8}}
+.ultrasonic-sweep{animation:sweep 2.5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
+
+@tailwind utilities;

@@ -1,0 +1,73 @@
+/* Builds public/global-dashboard/css/stitch.css (scoped to .sx, no preflight).
+   Run: npm run build:css:global */
+module.exports={
+  content:['./public/global-dashboard/index.html'],
+  important:'.sx',
+  corePlugins:{preflight:false},
+  theme:{extend:{
+    colors:{
+      'primary':'rgb(var(--sx-primary) / <alpha-value>)',
+      'primary-container':'rgb(var(--sx-primary-container) / <alpha-value>)',
+      'primary-fixed':'rgb(var(--sx-primary-fixed) / <alpha-value>)',
+      'primary-fixed-dim':'rgb(var(--sx-primary-fixed-dim) / <alpha-value>)',
+      'on-primary':'rgb(var(--sx-on-primary) / <alpha-value>)',
+      'on-primary-fixed':'rgb(var(--sx-on-primary-fixed) / <alpha-value>)',
+      'on-primary-fixed-variant':'rgb(var(--sx-on-primary-fixed-variant) / <alpha-value>)',
+      'secondary':'rgb(var(--sx-secondary) / <alpha-value>)',
+      'secondary-fixed':'rgb(var(--sx-secondary-fixed) / <alpha-value>)',
+      'on-secondary-fixed':'rgb(var(--sx-on-secondary-fixed) / <alpha-value>)',
+      'surface':'rgb(var(--sx-surface) / <alpha-value>)',
+      'surface-bright':'rgb(var(--sx-surface-bright) / <alpha-value>)',
+      'surface-dim':'rgb(var(--sx-surface-dim) / <alpha-value>)',
+      'surface-variant':'rgb(var(--sx-surface-variant) / <alpha-value>)',
+      'surface-container-lowest':'rgb(var(--sx-surface-container-lowest) / <alpha-value>)',
+      'surface-container-low':'rgb(var(--sx-surface-container-low) / <alpha-value>)',
+      'surface-container':'rgb(var(--sx-surface-container) / <alpha-value>)',
+      'surface-container-high':'rgb(var(--sx-surface-container-high) / <alpha-value>)',
+      'surface-container-highest':'rgb(var(--sx-surface-container-highest) / <alpha-value>)',
+      'background':'rgb(var(--sx-background) / <alpha-value>)',
+      'on-surface':'rgb(var(--sx-on-surface) / <alpha-value>)',
+      'on-surface-variant':'rgb(var(--sx-on-surface-variant) / <alpha-value>)',
+      'outline':'rgb(var(--sx-outline) / <alpha-value>)',
+      'outline-variant':'rgb(var(--sx-outline-variant) / <alpha-value>)',
+      'error':'rgb(var(--sx-error) / <alpha-value>)',
+      'on-error':'rgb(var(--sx-on-error) / <alpha-value>)',
+      'error-container':'rgb(var(--sx-error-container) / <alpha-value>)',
+      'on-error-container':'rgb(var(--sx-on-error-container) / <alpha-value>)',
+      'tertiary':'rgb(var(--sx-tertiary) / <alpha-value>)',
+      'on-tertiary':'rgb(var(--sx-on-tertiary) / <alpha-value>)',
+      'tertiary-fixed':'rgb(var(--sx-tertiary-fixed) / <alpha-value>)',
+      'tertiary-fixed-dim':'rgb(var(--sx-tertiary-fixed-dim) / <alpha-value>)',
+      'inverse-surface':'rgb(var(--sx-inverse-surface) / <alpha-value>)',
+      'inverse-on-surface':'rgb(var(--sx-inverse-on-surface) / <alpha-value>)',
+      'ok':'rgb(var(--sx-ok) / <alpha-value>)',
+      'on-ok':'rgb(var(--sx-on-ok) / <alpha-value>)',
+      'ok-container':'rgb(var(--sx-ok-container) / <alpha-value>)',
+      'on-ok-container':'rgb(var(--sx-on-ok-container) / <alpha-value>)',
+      'warn':'rgb(var(--sx-warn) / <alpha-value>)',
+      'warn-container':'rgb(var(--sx-warn-container) / <alpha-value>)',
+      'on-warn-container':'rgb(var(--sx-on-warn-container) / <alpha-value>)',
+      'bad':'rgb(var(--sx-bad) / <alpha-value>)',
+      'bad-container':'rgb(var(--sx-bad-container) / <alpha-value>)',
+      'on-bad-container':'rgb(var(--sx-on-bad-container) / <alpha-value>)',
+      'info':'rgb(var(--sx-info) / <alpha-value>)',
+      'info-container':'rgb(var(--sx-info-container) / <alpha-value>)',
+      'on-info-container':'rgb(var(--sx-on-info-container) / <alpha-value>)'
+    },
+    borderRadius:{DEFAULT:'0.25rem',lg:'0.5rem',xl:'0.75rem',full:'9999px'},
+    fontFamily:{
+      'headline-md':['Plus Jakarta Sans','Inter','sans-serif'],'headline-sm':['Plus Jakarta Sans','Inter','sans-serif'],
+      'headline-lg':['Plus Jakarta Sans','Inter','sans-serif'],
+      'body-md':['Inter','system-ui','sans-serif'],'body-sm':['Inter','system-ui','sans-serif'],'body-lg':['Inter','system-ui','sans-serif'],
+      'label-md':['Inter','system-ui','sans-serif'],'label-sm':['Inter','system-ui','sans-serif'],
+      mono:['JetBrains Mono','ui-monospace','Menlo','Consolas','monospace']
+    },
+    fontSize:{
+      'headline-lg':['32px',{lineHeight:'40px',fontWeight:'700'}],'headline-md':['24px',{lineHeight:'32px',fontWeight:'600'}],
+      'headline-sm':['20px',{lineHeight:'28px',fontWeight:'600'}],'body-lg':['16px',{lineHeight:'24px',fontWeight:'400'}],
+      'body-md':['14px',{lineHeight:'20px',fontWeight:'400'}],'body-sm':['12px',{lineHeight:'16px',fontWeight:'400'}],
+      'label-md':['12px',{lineHeight:'16px',fontWeight:'600'}],'label-sm':['11px',{lineHeight:'14px',fontWeight:'600'}]
+    }
+  }},
+  plugins:[]
+};
