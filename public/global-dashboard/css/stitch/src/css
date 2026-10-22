@@ -1,0 +1,114 @@
+/* Scoped styles for the Stitch-based pages (Alerts, Org Intelligence, System Health).
+   Everything lives under .sx so the rest of the dashboard is unaffected. */
+.sx{
+  --sx-primary:92 0 169;
+  --sx-primary-container:123 0 224;
+  --sx-primary-fixed:238 219 255;
+  --sx-primary-fixed-dim:218 185 255;
+  --sx-on-primary:255 255 255;
+  --sx-on-primary-fixed:42 0 83;
+  --sx-on-primary-fixed-variant:101 0 185;
+  --sx-secondary:112 59 199;
+  --sx-secondary-fixed:235 220 255;
+  --sx-on-secondary-fixed:38 0 88;
+  --sx-surface:255 247 255;
+  --sx-surface-bright:255 247 255;
+  --sx-surface-dim:228 212 239;
+  --sx-surface-variant:237 221 248;
+  --sx-surface-container-lowest:255 255 255;
+  --sx-surface-container-low:251 240 255;
+  --sx-surface-container:247 233 255;
+  --sx-surface-container-high:242 226 254;
+  --sx-surface-container-highest:237 221 248;
+  --sx-background:255 247 255;
+  --sx-on-surface:33 24 43;
+  --sx-on-surface-variant:76 67 85;
+  --sx-outline:125 115 135;
+  --sx-outline-variant:207 194 216;
+  --sx-error:186 26 26;
+  --sx-on-error:255 255 255;
+  --sx-error-container:255 218 214;
+  --sx-on-error-container:147 0 10;
+  --sx-tertiary:57 65 72;
+  --sx-on-tertiary:255 255 255;
+  --sx-tertiary-fixed:219 227 237;
+  --sx-tertiary-fixed-dim:191 199 209;
+  --sx-inverse-surface:54 44 65;
+  --sx-inverse-on-surface:249 236 255;
+  --sx-ok:4 120 87;
+  --sx-on-ok:255 255 255;
+  --sx-ok-container:209 250 229;
+  --sx-on-ok-container:6 78 59;
+  --sx-warn:180 83 9;
+  --sx-warn-container:254 243 199;
+  --sx-on-warn-container:146 64 14;
+  --sx-bad:185 28 28;
+  --sx-bad-container:254 226 226;
+  --sx-on-bad-container:153 27 27;
+  --sx-info:15 118 110;
+  --sx-info-container:204 251 241;
+  --sx-on-info-container:17 94 89;
+  color:rgb(var(--sx-on-surface));
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px;line-height:20px;
+}
+:root[data-theme="dark"] .sx{
+  --sx-primary:168 85 247;
+  --sx-primary-fixed:45 27 68;
+  --sx-primary-fixed-dim:91 46 140;
+  --sx-on-primary-fixed:238 216 255;
+  --sx-on-primary-fixed-variant:218 185 255;
+  --sx-secondary:196 161 255;
+  --sx-secondary-fixed:42 26 63;
+  --sx-on-secondary-fixed:235 220 255;
+  --sx-surface:31 24 41;
+  --sx-surface-bright:42 33 55;
+  --sx-surface-dim:20 15 27;
+  --sx-surface-variant:58 46 75;
+  --sx-surface-container-lowest:35 27 46;
+  --sx-surface-container-low:42 33 55;
+  --sx-surface-container:46 39 57;
+  --sx-surface-container-high:56 44 71;
+  --sx-surface-container-highest:66 53 90;
+  --sx-background:25 19 33;
+  --sx-on-surface:241 236 247;
+  --sx-on-surface-variant:180 171 194;
+  --sx-outline:167 157 182;
+  --sx-outline-variant:74 60 94;
+  --sx-error:255 122 130;
+  --sx-on-error:59 0 4;
+  --sx-error-container:63 26 30;
+  --sx-on-error-container:255 218 214;
+  --sx-ok:52 211 153;
+  --sx-on-ok:5 46 22;
+  --sx-ok-container:18 51 47;
+  --sx-on-ok-container:167 243 208;
+  --sx-warn:251 191 36;
+  --sx-warn-container:58 42 16;
+  --sx-on-warn-container:253 230 138;
+  --sx-bad:255 122 130;
+  --sx-bad-container:63 26 30;
+  --sx-on-bad-container:254 202 202;
+  --sx-info:94 234 212;
+  --sx-info-container:18 51 47;
+  --sx-on-info-container:153 246 228;
+}
+.sx *,.sx ::before,.sx ::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:rgb(var(--sx-outline-variant))}
+.sx h1,.sx h2,.sx h3,.sx h4,.sx p,.sx ul,.sx ol,.sx li,.sx dl,.sx dd{margin:0;padding:0;list-style:none}
+.sx table{min-width:0;width:100%;border-collapse:collapse}
+.sx th,.sx td{padding:0;font-size:inherit;font-weight:inherit;white-space:normal;text-align:left;background:none;color:inherit;border-bottom:0}
+.sx button{background:none;padding:0;text-align:inherit}
+.sx button:disabled{cursor:not-allowed;opacity:.5}
+.sx input,.sx select,.sx textarea{font:inherit;color:inherit;background:transparent}
+.sx select{appearance:auto}
+.sx a{color:inherit}
+.sx :focus-visible{outline:2px solid rgb(var(--sx-primary));outline-offset:2px}
+.sx dialog{color:rgb(var(--sx-on-surface))}
+.sx dialog::backdrop{background:rgba(20,10,30,.55)}
+.sx .msi{font-size:20px;width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:middle;flex:none}
+.sx .scroll-thin::-webkit-scrollbar{width:6px;height:6px}
+.sx .scroll-thin::-webkit-scrollbar-thumb{background:rgba(125,115,135,.45);border-radius:4px}
+/* scroll containers must be positioned so absolutely placed children (e.g. .sr-only) are clipped with them */
+.sx .overflow-x-auto,.sx .overflow-y-auto{position:relative}
+@media (prefers-reduced-motion:reduce){.sx *{animation:none!important;transition:none!important}}
+@tailwind utilities;
